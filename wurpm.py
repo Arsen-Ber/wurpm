@@ -9,9 +9,11 @@ import urllib.request
 
 
 """ 
-Open source
-WURPM => Windows Users Repository Package Manager
-Dev : MRX , real name : "Arsen"
+* Open source
+* WURPM => Windows Users Repository Package Manager
+* Dev : MRX , real name : "Arsen"
+TOEACH: You can visit my youtube channel, most importantly, do not pay attention to videos that are not about programming) 
+TOEACH: I think, I will also create a telegram channel in which you can post ideas for open source projects
 """
 
 
