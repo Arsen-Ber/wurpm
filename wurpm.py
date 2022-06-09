@@ -15,9 +15,8 @@ does = sys.argv[1]
 
 
 print(f"This packet manager install packages from WUR : Windows User Repository.")
-print( "( User Repository from \"Windows\" )")
+print( "[ User Repository from \"Windows\" (unofficial) ]")
 print()
-
 
 
 
