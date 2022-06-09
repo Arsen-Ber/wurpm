@@ -3,7 +3,8 @@ import sys
 import os
 import pathlib
 from bs4 import BeautifulSoup
-
+import re
+import urllib.request
 
 
 
@@ -51,8 +52,12 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
     BSPL = BeautifulSoup(WUR, "lxml")
     IPL = BSPL.find('a', { "id" : f"{ packageName }"})#.get_text()
-    HIPL = IPL.find('a', "href")
+    
+    print (IPL)
+
+    HIPL = IPL.find_all('a', attrs={'href'})
     print(HIPL)
+    # print(IPL, "\n", HIPL)
     # IPL
 
 
