@@ -39,7 +39,7 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
 
     BSPL = BeautifulSoup(WUR, "lxml")
-    IPL = BSPL.find('a')#.get_text()
+    IPL = BSPL.find('a', { "id" : f"{ packageName }"})#.get_text()
     # HIPL = IPL.find('a')
     print(IPL)
     # IPL
