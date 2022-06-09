@@ -7,6 +7,17 @@ from bs4 import BeautifulSoup
 
 
 
+""" 
+Open source
+WURPM => Windows Users Repository Package Manager
+Dev : MRX , real name : "Arsen"
+"""
+
+
+
+
+
+
 path = pathlib.Path().resolve()
 does = sys.argv[1]
 
@@ -40,8 +51,8 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
     BSPL = BeautifulSoup(WUR, "lxml")
     IPL = BSPL.find('a', { "id" : f"{ packageName }"})#.get_text()
-    # HIPL = IPL.find('a')
-    print(IPL)
+    HIPL = IPL.find('a', "href")
+    print(HIPL)
     # IPL
 
 
