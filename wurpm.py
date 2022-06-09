@@ -14,8 +14,8 @@ does = sys.argv[1]
 
 
 
-print("This packet manager install packages from AUR : Arch User Repository.")
-print( "( User Repository from \"GNU/Linux Arch\" )")
+print(f"This packet manager install packages from WUR : Windows User Repository.")
+print( "( User Repository from \"Windows\" )")
 print()
 
 
