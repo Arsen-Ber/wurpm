@@ -43,10 +43,6 @@ packageName = input( f"[{ path }] package >> " )
 
 if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip" ]:
 
-    # try:
-
-
-
 
 
     WUR = req.get(f"https://arsen-ber.github.io/wurpm/").text
@@ -57,29 +53,10 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     
     print (IPL)
 
-    HIPL = IPL.find_all('a', attrs={'href'})
+    HIPL = IPL.find_all('a')
     print(HIPL)
     # print(IPL, "\n", HIPL)
     # IPL
-
-
-    try:
-
-
-        pass
-
-
-
-
-    except:
-        print(f"Error: package \"{ packageName }\" not found!")
-
-
-    # print(GPL)
-
-
-    # except AttributeError:
-    #     print(f"Error: Package '{ packageName }' not found!")
 
 
 
