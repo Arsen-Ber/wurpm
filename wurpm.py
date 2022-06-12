@@ -20,7 +20,7 @@ path = pathlib.Path().resolve()
 does = sys.argv[1]
 
 
-
+#########################################################################
 
 def get_link(frontend_info_for_package, symbols_about_start):
     LIPL = []              #* List Install Package Link *#
@@ -31,7 +31,11 @@ def get_link(frontend_info_for_package, symbols_about_start):
     # print(STRIPL)
 ## end func ##
 
+def install_package(link):
+    os.system(f"curl -O { link }")
+## end func ##
 
+#########################################################################
 
 
 
@@ -60,7 +64,6 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     FIFP = BSPL.find('a', { "id" : f"{ packageName }"}).get_text()  #* Frontend Info For Package *#
 
     LTIP = get_link(FIFP, 55)  #* Link to install package
-    print(LTIP)
 
 
 
