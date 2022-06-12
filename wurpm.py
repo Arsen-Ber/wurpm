@@ -59,6 +59,10 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
 
 
+
+
+
+
 elif does in [ "remove-package", "rm-pkg", "r-p", "removepackage", "rmpkg", "rp" ]:
 
     # print("Removing package ", end='')
