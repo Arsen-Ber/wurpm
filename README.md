@@ -1,5 +1,20 @@
 # WURPM
-`Windows` User Repository Paclage Manager
+`Windows` User Repository Package Manager
+
+
+
+!**************
+Dependencies:
+        [
+            python3,
+            python3-requests,
+            python3-bs4 (BiautifulSoup4),
+            python3-pathlib,
+            python3-sys,
+            python3-os
+        ]
+!**************
+
 
 
 This is a package manager which the install packages from web-page "Windows User Repository : WUR"

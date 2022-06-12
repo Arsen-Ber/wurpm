@@ -3,8 +3,6 @@ import sys
 import os
 import pathlib
 from bs4 import BeautifulSoup
-import re
-import urllib.request
 
 
 
@@ -12,7 +10,7 @@ import urllib.request
 * Open source
 * WURPM => Windows Users Repository Package Manager
 * Dev : MRX
-* GitHub : https://github.com/Arsen-Ber?tab=repositories
+* GitHub : https://github.com/Arsen-Ber/
 TOEACH:  WURPM GitHub : https://github.com/Arsen-Ber/wurpm
 TOEACH:  I think, I will also create a telegram channel, where you can join the development of this and future projects
 """
@@ -45,6 +43,7 @@ packageName = input( f"[{ path }] package >> " )
 if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip" ]:
 
 
+    print(f"Package : { packageName }")
 
     WUR = req.get(f"https://arsen-ber.github.io/wurpm/").text
 
@@ -56,14 +55,14 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     LIPL = list(FIFP)    #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
     del LIPL[0:55]
     STRIPL = ''.join(LIPL) #* String Link IPL (link to install package)
-    print(STRIPL)
+    #print(STRIPL)
+    
 
 
 
 
 
-
-
+    print()
 elif does in [ "remove-package", "rm-pkg", "r-p", "removepackage", "rmpkg", "rp" ]:
 
     # print("Removing package ", end='')
