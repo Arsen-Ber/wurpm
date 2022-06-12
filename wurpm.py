@@ -51,8 +51,10 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     BSPL = BeautifulSoup(WUR, "lxml")
     IPL = BSPL.find('a', { "id" : f"{ packageName }"}).get_text()
     
-    LIPL = []       #* link : 53 symbols before package name *#
-    print (IPL)
+    LIPL = []
+    LISTLIPL = list(IPL)    #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
+    del LISTLIPL[0:55]
+    STRLIPL = ''.join(LISTLIPL) #* Strring Link IPL (link to install package)
 
 
 
