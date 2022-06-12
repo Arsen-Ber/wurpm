@@ -22,12 +22,12 @@ does = sys.argv[1]
 
 
 
-def install_package(packageName, frontend_info_for_package):
+def get_link(frontend_info_for_package, symbols_about_start):
     LIPL = []              #* List Install Package Link *#
-    LIPL = list(Frontend_info_for_package)      #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
-    del LIPL[0:55]
+    LIPL = list(frontend_info_for_package)      #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
+    del LIPL[0:symbols_about_start]
     STRIPL = ''.join(LIPL) #* String Link IPL (link to install package)
-    os.system(f"curl -O { STRIPL }") # Install package: file/directory
+    return STRIPL
     # print(STRIPL)
 ## end func ##
 
@@ -59,8 +59,8 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     BSPL = BeautifulSoup(WUR, "lxml")
     FIFP = BSPL.find('a', { "id" : f"{ packageName }"}).get_text()  #* Frontend Info For Package *#
 
-    install_package(packageName, FIFP)
-    
+    LTIP = get_link(FIFP, 55)  #* Link to install package
+    print(LTIP)
 
 
 
