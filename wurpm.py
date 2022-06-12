@@ -16,12 +16,20 @@ TOEACH:  I think, I will also create a telegram channel, where you can join the 
 """
 
 
-
-
-
-
 path = pathlib.Path().resolve()
 does = sys.argv[1]
+
+
+
+
+def install_package(packageName, frontend_info_for_package):
+    LIPL = []              #* List Install Package Link *#
+    LIPL = list(Frontend_info_for_package)      #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
+    del LIPL[0:55]
+    STRIPL = ''.join(LIPL) #* String Link IPL (link to install package)
+    os.system(f"curl -O { STRIPL }") # Install package: file/directory
+    # print(STRIPL)
+## end func ##
 
 
 
@@ -50,12 +58,8 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
     BSPL = BeautifulSoup(WUR, "lxml")
     FIFP = BSPL.find('a', { "id" : f"{ packageName }"}).get_text()  #* Frontend Info For Package *#
-    
-    LIPL = []               #* List Install Package Link *#
-    LIPL = list(FIFP)    #* List Link IPL   #* link : 54 symbols before start  (and "\r" "\n" in start from bs4 parser)*#
-    del LIPL[0:55]
-    STRIPL = ''.join(LIPL) #* String Link IPL (link to install package)
-    #print(STRIPL)
+
+    install_package(packageName, FIFP)
     
 
 
