@@ -11,6 +11,7 @@ else: main_disk = main_disk
 
 
 config_file = f"{main_disk}:\\\\Windows\\wurpm-config.py"
+# os.system(f"")
 # print(config_file)
 
 
