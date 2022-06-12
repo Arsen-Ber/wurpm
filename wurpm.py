@@ -31,8 +31,9 @@ def get_link(frontend_info_for_package, symbols_about_start):
     # print(STRIPL)
 ## end func ##
 
-def install_package(link):
-    os.system(f"curl -O { link }")
+def install_package(link, package_name):
+    # os.system(f"curl -O { package_name } { link }")
+    os.system(f"echo { path }")
 ## end func ##
 
 #########################################################################
@@ -47,7 +48,7 @@ print()
 
 
 
-packageName = input( f"[{ path }] package >> " )
+package_name = input( f"[{ path }] package >> " )
 
 
 
@@ -55,16 +56,16 @@ packageName = input( f"[{ path }] package >> " )
 if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip" ]:
 
 
-    print(f"Package : { packageName }")
+    print(f"Package : { package_name }")
 
     WUR = req.get(f"https://arsen-ber.github.io/wurpm/").text
 
 
     BSPL = BeautifulSoup(WUR, "lxml")
-    FIFP = BSPL.find('a', { "id" : f"{ packageName }"}).get_text()  #* Frontend Info For Package *#
+    FIFP = BSPL.find('a', { "id" : f"{ package_name }"}).get_text()  #* Frontend Info For Package *#
 
-    LTIP = get_link(FIFP, 55)  #* Link to install package
-
+    LTIP = get_link(FIFP, 55)  #* Link To Install Package
+    install_package(LTIP, package_name)
 
 
 
@@ -73,5 +74,5 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 elif does in [ "remove-package", "rm-pkg", "r-p", "removepackage", "rmpkg", "rp" ]:
 
     # print("Removing package ", end='')
-    os.system(f"rd /s { packageName }")
+    os.system(f"rd /s { package_name }")
 
