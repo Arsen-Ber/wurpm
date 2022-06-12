@@ -53,11 +53,6 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     
     print (IPL)
 
-    # HIPL = BSPL.find('a', { "class" : f"{ packageName }" })
-    # print(HIPL)
-    # print(IPL, "\n", HIPL)
-    # IPL
-
 
 
 
