@@ -33,7 +33,7 @@ def get_link(frontend_info_for_package, symbols_about_start):
 
 def install_package(link, package_name):
     # os.system(f"curl -O { package_name } { link }")
-    os.system(f"echo { path }")
+    os.system(f"echo { path }/{ package_name }")
 ## end func ##
 
 #########################################################################
@@ -64,7 +64,8 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     BSPL = BeautifulSoup(WUR, "lxml")
     FIFP = BSPL.find('a', { "id" : f"{ package_name }"}).get_text()  #* Frontend Info For Package *#
 
-    LTIP = get_link(FIFP, 55)  #* Link To Install Package
+    LTIP = get_link(FIFP, 106)  #* Link To Install Package
+    print(LTIP)
     install_package(LTIP, package_name)
 
 
