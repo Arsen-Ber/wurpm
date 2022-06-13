@@ -18,7 +18,6 @@ def install_package(link, package_name, download_path):
         print(f"Package: \"{ package_name }\" not Found!")
         print()
         return
-    
 ### end func ###
 
 
@@ -31,6 +30,9 @@ def get_link(frontend_info_for_package, symbols_about_start):
 ### end func ###
 
 
-install_package("https://www.python.org/ftp/python/3.10.5/python-3dghgf.10.5-amd64.exe", "pyyyy.exe", "C:\\Users\\arsen\\Downloads")
+
+
+
+# Error URL: install_package("https://www.python.org/ftp/python/3.10.5/python-3dghgf.10.5-amd64.exe", "pyyyy.exe", "C:\\Users\\arsen\\Downloads")
 
 

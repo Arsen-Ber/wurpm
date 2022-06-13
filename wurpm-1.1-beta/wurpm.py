@@ -23,7 +23,7 @@ TOEACH:  I think, I will also create a telegram channel, where you can join the 
 DISK = "C"  #* Name of your disk to install packages in PC. Edit, if name of your disk =/= C
 
 
-downloads = f"{ DISK }:\\Users\\{os.getlogin()}\\Downloads"
+downloads_packages = f"{ DISK }:\\Users\\{os.getlogin()}\\Downloads"
 
 path = pathlib.Path().resolve()
 does = sys.argv[1]
@@ -64,7 +64,7 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     real = input( f"Install package { package_name }? [Y/n]: " )
     
     if real == "y" or real == "Y" or real == "yes" or real == "Yes":
-        install_package(LTIP, package_name, downloads)
+        functions.install_package(LTIP, package_name, downloads_packages)
 
     elif real == "n" or real == "N" or real == "no" or real == "No":
         print("Stopping the installation...")
