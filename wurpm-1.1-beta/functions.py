@@ -1,13 +1,24 @@
 import os
 import requests as req
 import wget
+from time import sleep
+
 
 
 
 def install_package(link, package_name, download_path):
-    wget.download(link)
-    # os.system(f"curl -o { download_path }\\{ package_name } { link }")
-    print(f"Package:  { package_name }   Installed as: { download_path }\\{ package_name }")
+    try:
+        print(f"Package:  { package_name } \nInstalling package...")
+        sleep(1.2)
+        wget.download(link, f"{download_path}\\{package_name}")
+        print(f"Installed as: { download_path }\\{ package_name }")
+    except:
+        print("Error 404")
+        print(f"URL: \"{ link }\" not Found!")
+        print(f"Package: \"{ package_name }\" not Found!")
+        print()
+        return
+    
 ### end func ###
 
 
@@ -20,6 +31,6 @@ def get_link(frontend_info_for_package, symbols_about_start):
 ### end func ###
 
 
-
+install_package("https://www.python.org/ftp/python/3.10.5/python-3dghgf.10.5-amd64.exe", "pyyyy.exe", "C:\\Users\\arsen\\Downloads")
 
 
