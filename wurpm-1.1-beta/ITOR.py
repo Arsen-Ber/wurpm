@@ -4,7 +4,7 @@ import sys
 
 
 
-WURPM_version = 1.0
+WURPM_version = 1.1
 user = os.getlogin()
 
 

@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 
 """
-* WURPM version: 1.0
+* WURPM version: 1.1
 * Open source
 * WURPM => Windows Users Repository Package Manager
 * Dev : MRX
