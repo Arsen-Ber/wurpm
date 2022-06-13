@@ -7,7 +7,8 @@
 Dependencies:
         [
             Enabled Wi-Fi,
-            CURL,
+            CURL(wurpm version 1.0),
+            python3-wget,
             python3,
             python3-requests,
             python3-bs4 (BiautifulSoup4),

@@ -1,10 +1,12 @@
 import os
-
+import requests as req
+import wget
 
 
 
 def install_package(link, package_name, download_path):
-    os.system(f"curl -o { download_path }\\{ package_name } { link }")
+    wget.download(link)
+    # os.system(f"curl -o { download_path }\\{ package_name } { link }")
     print(f"Package:  { package_name }   Installed as: { download_path }\\{ package_name }")
 ### end func ###
 
