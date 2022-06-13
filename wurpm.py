@@ -72,7 +72,7 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 
     LTIP = get_link(FIFP, 106)  #* Link To Install Package
     print(LTIP)
-    install_package(LTIP, package_name)
+    # install_package(LTIP, package_name)
 
 
 
