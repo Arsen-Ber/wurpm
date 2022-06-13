@@ -39,7 +39,7 @@ def get_link(frontend_info_for_package, symbols_about_start):
 
 def install_package(link, package_name):
     os.system(f"curl -o { downloads }\\{ package_name } { link }")
-    os.system(f"echo { path }/{ package_name }")
+    print(f"Package:  { package_name }   Installed in: { downloads }\\{ package_name }")
 ## end func ##
 
 #########################################################################
