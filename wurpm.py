@@ -71,10 +71,16 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
     FIFP = BSPL.find('a', { "id" : f"{ package_name }"}).get_text()  #* Frontend Info For Package *#
 
     LTIP = get_link(FIFP, 106)  #* Link To Install Package
-    print(LTIP)
-    # install_package(LTIP, package_name)
+    real = input( f"Install package { package_name }? [Y/n]: " )
+    
+    if real == "y" or real == "Y" or real == "yes" or real == "Yes":
+        install_package(LTIP, package_name)
 
+    elif real == "n" or real == "N" or real == "no" or real == "No":
+        print("Stopping the installation...")
 
+    else:
+        print("!Emergency stop!")
 
 
     print()
