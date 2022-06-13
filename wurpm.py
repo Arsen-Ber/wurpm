@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 
 """
+* WURPM version: 1.0
 * Open source
 * WURPM => Windows Users Repository Package Manager
 * Dev : MRX
@@ -15,6 +16,11 @@ TOEACH:  WURPM GitHub : https://github.com/Arsen-Ber/wurpm
 TOEACH:  I think, I will also create a telegram channel, where you can join the development of this and future projects
 """
 
+
+DISK = "C"  #* Name of your disk to install packages in PC. Edit, if name of your disk =/= C
+
+
+downloads = f"{ DISK }:\\Users\\{os.getlogin()}\\Downloads"
 
 path = pathlib.Path().resolve()
 does = sys.argv[1]
@@ -32,7 +38,7 @@ def get_link(frontend_info_for_package, symbols_about_start):
 ## end func ##
 
 def install_package(link, package_name):
-    # os.system(f"curl -O { package_name } { link }")
+    os.system(f"curl -o \\{ package_name } { link }")
     os.system(f"echo { path }/{ package_name }")
 ## end func ##
 
@@ -75,5 +81,5 @@ if does in [ "install-package", "in-pkg", "i-p", "installpackage", "inpkg", "ip"
 elif does in [ "remove-package", "rm-pkg", "r-p", "removepackage", "rmpkg", "rp" ]:
 
     # print("Removing package ", end='')
-    os.system(f"rd /s { package_name }")
+    os.system(f"rd /s { downloads }\\{ package_name }")
 
