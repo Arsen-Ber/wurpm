@@ -8,5 +8,3 @@ import requests as req
 # with open(f"Test.exe", "wb") as f:
 #     f.write(package.content)# <-- ^^^ NO WORK!
 
-
-

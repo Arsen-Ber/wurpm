@@ -2,16 +2,18 @@ import os
 import requests as req
 import wget
 from time import sleep
+import pathlib
 
 
 
 
-def install_package(link, package_name, download_path):
+def install_package(link, package_name, download_path=f"{ pathlib.Path().resolve() }"):
     try:
         print(f"Package:  { package_name } \nInstalling package...")
         sleep(1.2)
-        wget.download(link, f"{download_path}\\{package_name}")
-        print(f"Installed as: { download_path }\\{ package_name }")
+        wget.download(link, f"{download_path}/{package_name}")
+        print()
+        print(f"Installed as: { download_path }/{ package_name }")
     except:
         print("Error 404")
         print(f"URL: \"{ link }\" not Found!")
@@ -35,4 +37,9 @@ def get_link(frontend_info_for_package, symbols_about_start):
 
 # Error URL: install_package("https://www.python.org/ftp/python/3.10.5/python-3dghgf.10.5-amd64.exe", "pyyyy.exe", "C:\\Users\\arsen\\Downloads")
 
+def main():
+    pylink = "https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe"
+    install_package(pylink, "pylink.exe")
 
+if __name__ == '__main__':
+    main()
